@@ -143,6 +143,7 @@ contains
   SynRegExpr in '..\..\Source\SynRegExpr.pas',
   SynURIOpener in '..\..\Source\SynURIOpener.pas',
   SynUnicode in '..\..\Source\SynUnicode.pas' {$IFNDEF CPUX64},
-  SynUsp10 in '..\..\Source\SynUsp10.pas' {$ENDIF};
+  SynUsp10 in '..\..\Source\SynUsp10.pas' {$ENDIF},
+  SynVCLStyleHooks in '..\..\Source\SynVCLStyleHooks.pas';
 
 end.

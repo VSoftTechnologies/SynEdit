@@ -1164,6 +1164,10 @@ uses
 {$IFDEF SYN_COMPILER_18_UP}
   AnsiStrings,
 {$ENDIF}
+{$IFDEF SYN_COMPILER_16_UP}
+  Vcl.Themes,
+  SynVCLStyleHooks,
+{$ENDIF}
   Clipbrd,
   ShellAPI,
   SynEditWordWrap,
@@ -11799,10 +11803,17 @@ initialization
 {$ENDIF}
   SynEditClipboardFormat := RegisterClipboardFormat(SYNEDIT_CLIPBOARD_FORMAT);
 
+{$IFDEF SYN_COMPILER_16_UP}
+  TCustomStyleEngine.RegisterStyleHook(TSynEdit, TSynEditVclStyleScrollBarsHook);
+{$ENDIF}
+
 finalization
 {$IFNDEF UNICODE}
   if Win32PlatformIsUnicode and (GetMsgHook <> 0) then
     UnhookWindowsHookEx(GetMsgHook);
+{$ENDIF}
+{$IFDEF SYN_COMPILER_16_UP}
+  TCustomStyleEngine.UnRegisterStyleHook(TSynEdit, TSynEditVclStyleScrollBarsHook);
 {$ENDIF}
 
 end.
