@@ -1,2 +1,5 @@
 # Disable any line endings auto conversion.
 * -text
+
+*.dspec filter=insert-hash
+*.dspec.yaml filter=insert-hash
