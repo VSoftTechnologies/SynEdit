@@ -12,7 +12,7 @@ The Original Code is: SynHighlighterAWK.pas, released 2000-06-18.
 The Original Code is based on the hkAWKSyn.pas file from the
 mwEdit component suite by Martin Waldenburg and other developers, the Initial
 Author of this file is Hideo Koiso.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -54,6 +54,7 @@ type
   TtkTokenKind = (tkComment, tkIdentifier, tkInterFunc, tkKey, tkNull,
     tkNumber, tkSpace, tkString, tkSymbol, tkSysVar, tkUnknown);
 
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynAWKSyn = class(TSynCustomHighLighter)
   private
     AWKSyntaxList: TStringList;

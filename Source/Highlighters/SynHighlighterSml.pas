@@ -12,7 +12,7 @@ The Original Code is: SynHighlighterSML.pas, released 2000-04-17.
 The Original Code is based on the dmMLSyn.pas file from the
 mwEdit component suite by Martin Waldenburg and other developers, the Initial
 Author of this file is David H. Muir.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -63,6 +63,7 @@ Type
   TIdentFuncTableFunc = function (Index: Integer): TtkTokenKind of object;
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynSMLSyn = class(TSynCustomHighlighter)
   private
     fBasis: Boolean;

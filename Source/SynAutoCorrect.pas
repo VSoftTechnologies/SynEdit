@@ -191,6 +191,7 @@ type
     property OnCorrected: TNotifyEvent read FOnCorrected write FOnCorrected;
   end;
 
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynAutoCorrect = class(TCustomSynAutoCorrect)
   published
     { Published declarations }

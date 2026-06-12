@@ -12,7 +12,7 @@
   The Original Code is based on the mwSupportClasses.pas file from the
   mwEdit component suite by Martin Waldenburg and other developers, the Initial
   Author of this file is Michael Hieke.
-  Unicode translation by Maël Hörz.
+  Unicode translation by Maï¿½l Hï¿½rz.
   All Rights Reserved.
 
   Contributors to the SynEdit and mwEdit projects are listed in the
@@ -1060,7 +1060,7 @@ begin
   FFont := TFont.Create;
   FFont.Name := DefaultFontName;
   FFont.Style := [];
-  FFont.PixelsPerInch := Screen.DefaultPixelsPerInch;
+  FFont.PixelsPerInch := Winapi.Windows.USER_DEFAULT_SCREEN_DPI; //Screen.DefaultPixelsPerInch;
   FFont.Size := 8;
   {$IF CompilerVersion >= 36}
   FFont.IsScreenFont := True;
@@ -1564,7 +1564,7 @@ begin
     FInternalGlyph.AlphaFormat := afDefined;
   end;
 
-  FPPI := Screen.DefaultPixelsPerInch;
+  FPPI := Winapi.Windows.USER_DEFAULT_SCREEN_DPI; //Screen.DefaultPixelsPerInch;
 
   FVisible := True;
   FGlyph := TBitmap.Create;

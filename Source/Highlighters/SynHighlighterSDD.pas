@@ -10,7 +10,7 @@ the specific language governing rights and limitations under the License.
 
 The Original Code is: SynHighlighterSDD.pas, released 2001-08-20.
 The Initial Author of this file is Pieter Polak.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -60,6 +60,7 @@ type
   TRangeState = (rsComment, rsUnKnown);
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynSDDSyn = class(TSynCustomHighlighter)
   private
     fRange: TRangeState;

@@ -1,0 +1,54 @@
+# DPM package spec file
+min dpm client version: 1.0.0
+metadata:
+  id: VSoft.SynEdit
+  version: 1.0.0
+  description: SynEdit syntax highlighting editor - based on PyScripter fork
+  authors:
+    - Vincent Parrett
+  projectUrl: https://github.com/VSoftTechnologies/PyScripterSynEdit
+  repositoryUrl: https://github.com/VSoftTechnologies/PyScripterSynEdit
+  repositoryCommit: '#HASH#'
+  license: MPL-1.1
+  copyright: Vincent Parrett and contributors
+  readme: readme.md
+variables:
+  packagesource: RAD Studio $compilerNoPrefix$
+targetPlatforms:
+  - compiler: delphi10.4
+    platforms:
+      - win32
+      - win64
+    variables:
+      packagesource: RAD Studio $compilerNoPrefix$
+  - compiler from: delphi11.0
+    compiler to: delphi12.0
+    platforms:
+      - win32
+      - win64
+  - compiler: delphi13.0
+    platforms:
+      - win32
+      - win64
+      - winarm64ec
+templates:
+  - name: default
+    source:
+      - src: ./Source/*.dcr
+      - src: ./Source/*.res
+        copyToLib: true
+      - src: ./Source/*.inc
+      - src: ./Source/**/*.pas
+      - src: ./Source/**/*.ini
+      - src: ./Source/**/*.dfm
+        copyToLib: true
+      - src: ./Packages/$packageSource$/*.dpk
+      - src: ./Packages/$packageSource$/*.dproj
+    build:
+      - project: ./Packages/$packageSource$/SynEditDR.dproj
+        platforms:
+          - win32
+          - win64
+          - winarm64ec
+    design:
+      - project: ./Packages/$packageSource$/SynEditDD.dproj

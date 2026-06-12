@@ -12,7 +12,7 @@ The Original Code is: SynHighlighterTclTk.pas, released 2000-05-05.
 The Original Code is based on the siTclTkSyn.pas file from the
 mwEdit component suite by Martin Waldenburg and other developers, the Initial
 Author of this file is Igor Shitikov.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -59,6 +59,7 @@ type
   TRangeState = (rsUnknown, rsAnsi, rsPasStyle, rsCStyle);
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynTclTkSyn = class(TSynCustomHighlighter)
   private
     fRange: TRangeState;

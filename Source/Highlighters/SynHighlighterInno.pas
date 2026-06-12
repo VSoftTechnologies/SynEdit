@@ -11,7 +11,7 @@ the specific language governing rights and limitations under the License.
 The Original Code is: SynHighlighterInno.pas, released 2000-05-01.
 The Initial Author of this file is Satya.
 Portions created by Satya are Copyright 2000 Satya.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit project are listed in the Contributors.txt file.
@@ -56,6 +56,7 @@ type
     tkNull, tkNumber, tkParameter, tkSection, tkSpace, tkString, tkSymbol,
     tkUnknown);
 
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynInnoSyn = class(TSynCustomHighlighter)
   private
     fTokenID: TtkTokenKind;

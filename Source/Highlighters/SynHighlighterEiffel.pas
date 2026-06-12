@@ -12,7 +12,7 @@ Code template generated with SynGen.
 The original code is: SynHighlighterEiffel.pas, released 2004-03-08.
 Description: Eiffel Syntax Parser/Highlighter
 The initial author of this file is Massimo Maria Ghisalberti (nissl).
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 Copyright (c) 2004, all rights reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -71,6 +71,7 @@ type
   TIdentFuncTableFunc = function (Index: Integer): TtkTokenKind of object;
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynEiffelSyn = class(TSynCustomHighlighter)
   private
     fRange: TRangeState;

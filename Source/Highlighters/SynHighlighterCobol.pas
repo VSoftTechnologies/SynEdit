@@ -13,7 +13,7 @@ The original code is: SynHighlighterCobol.pas, released 2002-08-26.
 Description: COBOL Syntax Parser/Highlighter
 The author of this file is Andrey Ustinov.
 Copyright (c) 2002 Software Mining, http://www.softwaremining.com/.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All rights reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -73,6 +73,7 @@ type
                  rsComment, rsDebug);
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynCobolSyn = class(TSynCustomCodeFoldingHighlighter)
   private
     fRange: TRangeState;

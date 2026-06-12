@@ -14,7 +14,7 @@ The Original Code is partly based on the mwHTMLExport.pas file from the
 mwEdit component suite by Martin Waldenburg and other developers, the Initial
 Author of this file is Ascher Stefan.
 Portions created by Ascher Stefan are Copyright 2002 Ascher Stefan.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit project are listed in the Contributors.txt file.
@@ -51,6 +51,7 @@ uses
   Classes;
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynExporterTeX = class(TSynCustomExporter)
   private
     FMargin: Integer;

@@ -12,7 +12,7 @@ The Original Code is: SynHighlighterCpp.pas, released 2000-04-10.
 The Original Code is based on the dcjCppSyn.pas file from the
 mwEdit component suite by Martin Waldenburg and other developers, the Initial
 Author of this file is Michael Trier.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -77,6 +77,7 @@ type
   TIdentFuncTableFunc = function (Index: Integer): TtkTokenKind of object;
 
 //  TSynCppSyn = class(TSynCustomHighlighter)
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynCppSyn = class(TSynCustomCodeFoldingHighlighter)
   private
     fAsmStart: Boolean;

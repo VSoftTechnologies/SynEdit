@@ -399,6 +399,7 @@ type
     property OnShow: TNotifyEvent read FOnShow write FOnShow;
   end;
 
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynCompletionProposal = class(TSynBaseCompletionProposal)
   private
     fEditors: TList;
@@ -458,6 +459,7 @@ type
     property OnCodeCompletion: TCodeCompletionEvent read FOnCodeCompletion write FOnCodeCompletion;
   end;
 
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynAutoComplete = class(TComponent)
   private
     FShortCut: TShortCut;
@@ -1200,14 +1202,14 @@ begin
   FTitleFont := TFont.Create;
   FTitleFont.Style := [fsBold];
   FTitleFont.Color := clBtnText;
-  FTitleFont.PixelsPerInch := Screen.DefaultPixelsPerInch;
+  FTitleFont.PixelsPerInch := Winapi.Windows.USER_DEFAULT_SCREEN_DPI; //Screen.DefaultPixelsPerInch;
   FTitleFont.Size := Application.DefaultFont.Size;
   {$IF CompilerVersion >= 36}
   FTitleFont.IsScreenFont := True;
   {$IFEND CompilerVersion >= 36}
 
   FFont := TFont.Create;
-  FFont.PixelsPerInch := Screen.DefaultPixelsPerInch;
+  FFont.PixelsPerInch := Winapi.Windows.USER_DEFAULT_SCREEN_DPI; //Screen.DefaultPixelsPerInch;
   FFont.Size := Application.DefaultFont.Size;
   {$IF CompilerVersion >= 36}
   FFont.IsScreenFont := True;
@@ -1215,7 +1217,7 @@ begin
 
   FGripperFont := TFont.Create;
   FGripperFont.Color := clBtnText;
-  FGripperFont.PixelsPerInch := Screen.DefaultPixelsPerInch;
+  FGripperFont.PixelsPerInch := Winapi.Windows.USER_DEFAULT_SCREEN_DPI; //Screen.DefaultPixelsPerInch;
   FGripperFont.Size := Application.DefaultFont.Size;
   {$IF CompilerVersion >= 36}
   FGripperFont.IsScreenFont := True;
@@ -1566,6 +1568,7 @@ begin
   end;
   Canvas.Draw(0, FTitleHeight, FPaintBitmap);
 end;
+
 
 procedure TSynBaseCompletionProposalForm.PaintGripper;
 var

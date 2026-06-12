@@ -10,7 +10,7 @@ the specific language governing rights and limitations under the License.
 
 The Original Code is: SynHighlighterRC.pas, released 2004-06-12.
 The initial author of this file is Yiannis Mandravellos.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit project are listed in the Contributors.txt file.
@@ -50,7 +50,8 @@ type
   PIdentFuncTableFunc = ^TIdentFuncTableFunc;
   TIdentFuncTableFunc = function (Index: Integer): TtkTokenKind of object;
 
- TSynRCSyn = class(TSynCustomHighlighter)
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  TSynRCSyn = class(TSynCustomHighlighter)
   private
    fRange: TRangeState;
    fTokenID: TtkTokenKind;

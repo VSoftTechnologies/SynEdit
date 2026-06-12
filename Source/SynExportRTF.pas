@@ -46,6 +46,7 @@ uses
   Classes;
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynExporterRTF = class(TSynCustomExporter)
   private
     fAttributesChanged: Boolean;

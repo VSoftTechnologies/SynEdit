@@ -67,6 +67,7 @@ type
     sqlSybase, sqlIngres, sqlMSSQL2K, sqlPostgres, sqlNexus, sqlInformix);
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynSQLSyn = class(TSynCustomHighlighter)
   private
     fRange: TRangeState;

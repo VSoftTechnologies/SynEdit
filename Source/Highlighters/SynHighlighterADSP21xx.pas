@@ -12,7 +12,7 @@ The Original Code is: SynHighlighterADSP21xx.pas, released 2000-04-17.
 The Original Code is based on the wbADSP21xxSyn.pas file from the
 mwEdit component suite by Martin Waldenburg and other developers, the Initial
 Author of this file is Wynand Breytenbach.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -60,6 +60,7 @@ type
   PIdentFuncTableFunc = ^TIdentFuncTableFunc;
   TIdentFuncTableFunc = function (Index: Integer): TtkTokenKind of object;
 
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynADSP21xxSyn = class(TSynCustomHighlighter)
   private
     fRange: TRangeState;

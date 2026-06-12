@@ -12,7 +12,7 @@ The Original Code is: SynHighlighterHP48.pas, released 2000-06-23.
 The Original Code is based on the cbHPSyn.pas file from the
 mwEdit component suite by Martin Waldenburg and other developers, the Initial
 Author of this file is Cyrille de Brebisson.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -117,6 +117,7 @@ type
   TRangeState = (rsRpl, rsComRpl, rssasm1, rssasm2, rssasm3, rsAsm, rsComAsm2,
     rsComAsm1);
 
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynHP48Syn = class(TSynCustomHighLighter)
   private
     fTockenKind: TtkTokenKind;

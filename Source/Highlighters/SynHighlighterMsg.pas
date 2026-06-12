@@ -13,7 +13,7 @@ The original code is: SynHighlighterMsg.pas, released 2001-10-03.
 Description: SynGen Msg file highlighter
 The initial author of this file is P.L. Polak.
 Copyright (c) 2001, all rights reserved.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
 Contributors.txt file.
@@ -60,6 +60,7 @@ type
   PIdentFuncTableFunc = ^TIdentFuncTableFunc;
   TIdentFuncTableFunc = function (Index: Integer): TtkTokenKind of object;
 
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynMsgSyn = class(TSynCustomHighlighter)
   private
     fRange: TRangeState;

@@ -13,7 +13,7 @@ ST stands for Structured Text, and it is part of IEC1131 standard for
 programming PLCs.
 Author of this file is Ruggero Bandera.
 Portions created by Ruggero Bandera are Copyright (C) 2002 Ruggero Bandera.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -56,6 +56,7 @@ type
   PIdentFuncTableFunc = ^TIdentFuncTableFunc;
   TIdentFuncTableFunc = function (Index: Integer): TtkTokenKind of object;
 
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynSTSyn = class(TSynCustomHighlighter)
   private
     fAsmStart: Boolean;

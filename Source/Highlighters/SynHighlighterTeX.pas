@@ -10,7 +10,7 @@ the specific language governing rights and limitations under the License.
 
 The Original Code is: SynHighlighterTex.pas, released 2002-09-18.
 Author of this file is Soeren Sproessig.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -45,6 +45,7 @@ type
                   tkControlSequence, tkMathMode);
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynTeXSyn = class(TSynCustomHighlighter)
   private
     fTokenID: TtkTokenKind;

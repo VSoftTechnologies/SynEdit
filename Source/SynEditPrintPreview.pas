@@ -13,7 +13,7 @@ The Original Code is: SynEditPrintPreview.pas, released 2000-06-01.
 The Initial Author of the Original Code is Morten J. Skovrup.
 Portions written by Morten J. Skovrup are copyright 2000 Morten J. Skovrup.
 Portions written by Michael Hieke are copyright 2000 Michael Hieke.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit project are listed in the Contributors.txt file.
@@ -63,6 +63,7 @@ type
   TPreviewPageEvent = procedure(Sender: TObject; PageNumber: Integer) of object;
   TSynPreviewScale = (pscWholePage, pscPageWidth, pscUserScaled);
 
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynEditPrintPreview = class(TCustomControl)
   private
     FPaperRect: TRect;

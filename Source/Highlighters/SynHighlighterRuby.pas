@@ -12,7 +12,7 @@ The Original Code is: SynHighlighterRuby.pas, released 2001-11-13.
 The Initial Author of this file is Stefan Ascher.
 Portions by Jan Verhoeven (http://jansfreeware.com/jfdelphi.htm)
 "Heredoc" syntax highlighting implementation by Marko Njezic.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -67,6 +67,7 @@ type
 {$ENDIF}
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynRubySyn = class(TSynCustomHighlighter)
   private
     fRange: TRangeState;
@@ -456,9 +457,9 @@ begin
 //
 //%q and %Q start delimited single- and double-quoted strings.
 //
-//%q/general single-quoted string/ » general single-quoted string
-//%Q!general double-quoted string! » general double-quoted string
-//%Q{Seconds/day: #{24*60*60}}     » Seconds/day: 86400
+//%q/general single-quoted string/ ï¿½ general single-quoted string
+//%Q!general double-quoted string! ï¿½ general double-quoted string
+//%Q{Seconds/day: #{24*60*60}}     ï¿½ Seconds/day: 86400
 //
 //The character following the ``q'' or ``Q'' is the delimiter. If it is an
 //opening bracket, brace, parenthesis, or less-than sign, the string is read

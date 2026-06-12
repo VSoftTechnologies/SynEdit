@@ -11,7 +11,7 @@ the specific language governing rights and limitations under the License.
 The Original Code is: SynHighlighterProgress.pas, released 2000-04-20.
 The Initial Author of the Original Code is Bruno Mikkelsen.
 Portions written by Bruno Mikkelsen are copyright 2000 Bruno Mikkelsen.
-Unicode translation by Maël Hörz.
+Unicode translation by Maï¿½l Hï¿½rz.
 All Rights Reserved.
 
 Contributors to the SynEdit and mwEdit projects are listed in the
@@ -74,6 +74,7 @@ type
   TIdentFuncTableFunc = function (Index: Integer): TtkTokenKind of object;
 
 type
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynProgressSyn = class(TSynCustomHighLighter)
   private
     fRange: TRangeState;

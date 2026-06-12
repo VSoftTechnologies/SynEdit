@@ -53,6 +53,7 @@ type
 
 type
 //++ CodeFolding
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
   TSynJSONSyn = class(TSynCustomCodeFoldingHighlighter)
 //-- CodeFolding
   private
