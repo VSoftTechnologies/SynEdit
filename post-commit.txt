@@ -15,7 +15,7 @@ SOURCE_FOLDER="./"
 echo -e "${YELLOW}Post-commit hook: Processing .dspec and .dspec.yaml files in ${SOURCE_FOLDER} folder${NC}"
 
 # Find all .dspec and .dspec.yaml files in the Source folder
-DSPEC_FILES=$(find "$SOURCE_FOLDER" \( -name "*.dspec" -o -name "*.dspec.yaml" \) -type f 2>/dev/null)
+DSPEC_FILES=$(find "$SOURCE_FOLDER" \( -o -name "*.dspec.yaml" \) -type f 2>/dev/null)
 
 if [ -z "$DSPEC_FILES" ]; then
     echo -e "${YELLOW}No .dspec or .dspec.yaml files found in ${SOURCE_FOLDER} folder${NC}"
