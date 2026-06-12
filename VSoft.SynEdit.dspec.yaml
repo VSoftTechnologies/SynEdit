@@ -8,7 +8,7 @@ metadata:
     - Vincent Parrett
   projectUrl: https://github.com/VSoftTechnologies/PyScripterSynEdit
   repositoryUrl: https://github.com/VSoftTechnologies/PyScripterSynEdit
-  repositoryCommit: "#HASH#"
+  repositoryCommit: #HASH#
   license: MPL-1.1
   copyright: Vincent Parrett and contributors
   readme: readme.md
