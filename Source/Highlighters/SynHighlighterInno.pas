@@ -56,7 +56,7 @@ type
     tkNull, tkNumber, tkParameter, tkSection, tkSpace, tkString, tkSymbol,
     tkUnknown);
 
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynInnoSyn = class(TSynCustomHighlighter)
   private
     fTokenID: TtkTokenKind;

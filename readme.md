@@ -1,10 +1,8 @@
+# SynEdit
+
+A fast, syntax-highlighting source code editor control for Delphi.
+
 <div align="center">
-  <img src="Art/SynEditLogo.svg" alt="SynEdit" width="96" />
-
-  # SynEdit
-
-  A fast, syntax-highlighting source code editor control for Delphi.
-
   [![Delphi: 10.4+](https://img.shields.io/badge/Delphi-10.4%2B-red.svg)](https://www.embarcadero.com/products/delphi)
   [![Platform: Windows](https://img.shields.io/badge/platform-Win32%20%7C%20Win64%20%7C%20ARM64EC-blue.svg)](#requirements)
   [![License: MPL 1.1](https://img.shields.io/badge/license-MPL%201.1%20%2F%20LGPL-lightgrey.svg)](LICENSE)

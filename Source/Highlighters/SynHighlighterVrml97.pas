@@ -109,7 +109,7 @@ type
   TRangeState = (rsNormalText, rsComment, rsX3DHeader, rsX3DDocType);
 
 type
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynVrml97Syn = class(TSynCustomHighLighter)
   private
     fRange: TRangeState;

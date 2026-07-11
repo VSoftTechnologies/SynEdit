@@ -58,7 +58,7 @@ type
   TRangeState = (rsANil, rsComment, rsUnKnown);
 
 type
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynDfmSyn = class(TSynCustomHighlighter)
   private
     fRange: TRangeState;

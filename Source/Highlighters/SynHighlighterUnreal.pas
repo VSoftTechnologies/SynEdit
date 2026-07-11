@@ -82,7 +82,7 @@ type
   PIdentFuncTableFunc = ^TIdentFuncTableFunc;
   TIdentFuncTableFunc = function (Index: Integer): TtkTokenKind of object;
 
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynUnrealSyn = class(TSynCustomHighlighter)
   private
     fRange: TRangeState;

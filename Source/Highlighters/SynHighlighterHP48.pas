@@ -117,7 +117,7 @@ type
   TRangeState = (rsRpl, rsComRpl, rssasm1, rssasm2, rssasm3, rsAsm, rsComAsm2,
     rsComAsm1);
 
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynHP48Syn = class(TSynCustomHighLighter)
   private
     fTockenKind: TtkTokenKind;

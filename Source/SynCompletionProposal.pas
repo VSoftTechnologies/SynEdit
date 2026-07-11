@@ -399,7 +399,7 @@ type
     property OnShow: TNotifyEvent read FOnShow write FOnShow;
   end;
 
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynCompletionProposal = class(TSynBaseCompletionProposal)
   private
     fEditors: TList;
@@ -459,7 +459,7 @@ type
     property OnCodeCompletion: TCodeCompletionEvent read FOnCodeCompletion write FOnCodeCompletion;
   end;
 
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynAutoComplete = class(TComponent)
   private
     FShortCut: TShortCut;

@@ -166,7 +166,7 @@ type
     Range in case a nested MultiSyn uses the highlighter too.
   }
 
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynMultiSyn = class(TSynCustomHighlighter)
   private
     fRangeProc: TRangeProc;

@@ -68,7 +68,7 @@ type
   TPyFoldType = (pftCodeBlock, pftMultiLineStringFoldType, pftClassDefType, pftFunctionDefType);
 
 
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynPythonSyn = class(TSynCustomCodeFoldingHighlighter)
   private
     fStringStarter: WideChar;  // used only for rsMultilineString3 stuff

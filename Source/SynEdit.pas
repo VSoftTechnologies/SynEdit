@@ -995,7 +995,7 @@ type
       read fSearchNotFound write fSearchNotFound;
   end;
 
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynEdit = class(TCustomSynEdit)
   published
     // inherited properties

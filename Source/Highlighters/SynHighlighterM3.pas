@@ -59,7 +59,7 @@ type
       True: (TokenRange: Word; Level: Word);
     end;
 
-  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF CompilerVersion > 36.0} or pidWinArm64EC{$ENDIF})]
+  [ComponentPlatformsAttribute(pidWin32 or pidWin64 {$IF RTLVersion >= 37.1} or pidWinArm64EC{$ENDIF})]
   TSynM3Syn = class(TSynCustomHighLighter)
   private
     fRange: TRangeState;
